@@ -1,0 +1,29 @@
+targets:
+  categories:
+    - https://www.safcodental.com/catalog/sutures-surgical-products
+    - https://www.safcodental.com/catalog/gloves
+  base_url: https://www.safcodental.com
+
+rate_limiting:
+  delay_seconds: 2.0
+  max_concurrent: 3
+
+retry:
+  max_retries: 3
+  backoff_factor: 2.0
+  retry_on_status: [429, 500, 502, 503, 504]
+
+output:
+  directory: output
+  formats:
+    - json
+    - csv
+
+llm:
+  model: claude-sonnet-4-20250514
+  api_key_env_var: ANTHROPIC_API_KEY
+  max_tokens: 4096
+
+logging:
+  level: INFO
+  file: output/crawl_log.txt

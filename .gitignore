@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Testing
+.pytest_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Runtime artifacts (regenerated each run)
+output/checkpoint.db
+output/crawl_log.txt
+
+# Dev tooling
+.claude/
+specs/
+logs/
+
+# OS files
+.DS_Store
